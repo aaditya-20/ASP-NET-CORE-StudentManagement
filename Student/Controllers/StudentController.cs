@@ -62,9 +62,9 @@ namespace Student.Controllers
 
              ReplaceOneResult result = _mongoDbContext.students.ReplaceOne(b => (b.Id == updated.Id), updated);
 
-            
+            var data = _mongoDbContext.students.Find(b => (b.Id == updated.Id)).FirstOrDefault();
 
-            return Ok(result);
+            return Ok(data);
 
         }
 

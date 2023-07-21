@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 using Student.Models;
-
+using MongoDB.Bson.Serialization.Conventions;
 namespace Student.Data
 {
     public class MongoDbContext
@@ -9,6 +9,7 @@ namespace Student.Data
 
         public MongoDbContext(IConfiguration configuration)
         {
+
             var connectionString = configuration.GetConnectionString("MongoDBConnection");
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase("StudentManagement");
