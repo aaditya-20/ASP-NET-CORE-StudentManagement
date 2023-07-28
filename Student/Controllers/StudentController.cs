@@ -57,7 +57,7 @@ namespace Student.Controllers
         [Route("addFreind")]
         public IActionResult update([FromBody] Register updated)
         {
-            // check if user exists
+           
             
 
              ReplaceOneResult result = _mongoDbContext.students.ReplaceOne(b => (b.Id == updated.Id), updated);
